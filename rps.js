@@ -29,8 +29,10 @@ function showOutCome(){
         console.log("You win! ")
     }else if(playerChoice() === "scissors" && engineChoice() === "paper"){
         console.log("You win! ")
+    }else if(playerChoice() === engineChoice()){
+        console.log("It's a tie! ")
     }else{
-        console.log("You lose! ")
+        console.log("You lost! ")
     }
 }
 
