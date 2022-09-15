@@ -26,18 +26,23 @@ function engineChoice(){ // How do I get the computer to chose and then output t
 function showOutCome(){
     if(playerChoice() === "rock" && engineChoice() === "scissors"){
         console.log("You win! ")
+        score++
     }else if(playerChoice() === "paper" && engineChoice() === "rock"){
         console.log("You win! ")
+        score++
     }else if(playerChoice() === "scissors" && engineChoice() === "paper"){
         console.log("You win! ")
+        score++
     }else if(playerChoice() === engineChoice()){
         console.log("It's a tie! ")
+        score = 0
     }else{
         console.log("You lost! ")
+        score = -1
     }
 }
 
-function calculateScore(){
+function calculateFinalScore(){ // Update score depending on who won
     return
 }
 
