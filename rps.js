@@ -16,6 +16,7 @@ let score = 0
 function playerChoice(){ // How do I randomize the choice without using prompt("What's your choice? ")
     const choice = ["rock", "paper", "scissors"]
     return choice
+    // add eventlistener choice.addEventListener("onclick")
 }
 
 function engineChoice(){ // How do I get the computer to chose and then output that data?
