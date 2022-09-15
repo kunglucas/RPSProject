@@ -17,8 +17,6 @@ function playerChoice(){
     return choice
 }
 
-
-
 function engineChoice(){
     const aiChoice = Math.floor(Math.random() * 3)
     return aiChoice
