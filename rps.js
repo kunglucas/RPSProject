@@ -12,6 +12,12 @@ We need functions:
 
 If statements to calculate the different outcomes depending on choice
 */
+function playerChoice(){
+    const choice = ['rock', 'paper', 'scissors']
+    return choice
+}
+
+
 
 function engineChoice(){
     const aiChoice = Math.floor(Math.random() * 3)
