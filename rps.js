@@ -21,3 +21,10 @@ function engineChoice(){
     const aiChoice = Math.floor(Math.random() * 3)
     return aiChoice
 }
+
+
+function playGame(){
+    playerChoice()
+    engineChoice()
+}
+playGame()
