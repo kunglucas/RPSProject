@@ -12,6 +12,7 @@ We need functions:
 
 If statements to calculate the different outcomes depending on choice
 */
+let score = 0
 function playerChoice(){ // How do I randomize the choice without using prompt("What's your choice? ")
     const choice = ["rock", "paper", "scissors"]
     return choice
@@ -34,6 +35,10 @@ function showOutCome(){
     }else{
         console.log("You lost! ")
     }
+}
+
+function calculateScore(){
+    return
 }
 
 function playGame(){
