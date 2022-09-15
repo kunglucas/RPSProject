@@ -12,12 +12,12 @@ We need functions:
 
 If statements to calculate the different outcomes depending on choice
 */
-function playerChoice(){
+function playerChoice(){ // How do I randomize the choice without using prompt("What's your choice? ")
     const choice = ["rock", "paper", "scissors"]
     return choice
 }
 
-function engineChoice(){
+function engineChoice(){ // How do I get the computer to chose and then output that data?
     const aiChoice = Math.floor(Math.random() * 3)
     return aiChoice
 }
