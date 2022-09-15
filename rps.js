@@ -22,7 +22,7 @@ function engineChoice(){
     return aiChoice
 }
 
-function isWinner(){
+function showOutCome(){
     if(playerChoice() === "rock" && engineChoice() === "scissors"){
         console.log("You win! ")
     }else if(playerChoice() === "paper" && engineChoice() === "rock"){
