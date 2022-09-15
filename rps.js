@@ -13,7 +13,7 @@ We need functions:
 If statements to calculate the different outcomes depending on choice
 */
 function playerChoice(){
-    const choice = ['rock', 'paper', 'scissors']
+    const choice = ["rock", "paper", "scissors"]
     return choice
 }
 
@@ -22,6 +22,17 @@ function engineChoice(){
     return aiChoice
 }
 
+function isWinner(){
+    if(playerChoice() === "rock" && engineChoice() === "scissors"){
+        console.log("You win! ")
+    }else if(playerChoice() === "paper" && engineChoice() === "rock"){
+        console.log("You win! ")
+    }else if(playerChoice() === "scissors" && engineChoice() === "paper"){
+        console.log("You win! ")
+    }else{
+        console.log("You lose! ")
+    }
+}
 
 function playGame(){
     playerChoice()
