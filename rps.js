@@ -9,10 +9,12 @@ If statements to calculate the different outcomes depending on choice
 */
 const prompt = require('prompt-sync')();
 let score = 0
-let pChoice = function playerChoice(){ // How do I randomize the choice without using prompt("What's your choice? ") => fixed
+
+
+
+let pChoice = function getPlayerChoice(){ // How do I randomize the choice without using prompt("What's your choice? ") => fixed
     const rpsChoice = ['rock ' , ' paper', ' scissors ']
-    const rpsPlayerChoice = prompt(`Pick one: ${rpsChoice[0]}${rpsChoice[1]}${rpsChoice[2]}`) //  ==> ["rock ", " paper ", " scissors "]
-    // add something thats stops prompt from continuing in console
+    const rpsPlayerChoice = prompt(`Pick one: ${rpsChoice[0]}${rpsChoice[1]}${rpsChoice[2]} : `) //  ==> ["rock ", " paper ", " scissors "]
     if(rpsPlayerChoice === "rock"){
         console.log(`You chose: ${rpsChoice[0]}`) // => " rock"
     }else if(rpsPlayerChoice === "paper"){
@@ -20,43 +22,49 @@ let pChoice = function playerChoice(){ // How do I randomize the choice without 
     }else{
         console.log(`You chose: ${rpsChoice[2]}`)
     }
-    
-    // add eventlistener choice.addEventListener("onclick") when working with DOM
+    return rpsPlayerChoice
+// add eventlistener choice.addEventListener("onclick") when working with DOM
 }
 
 
-
-let cChoice = function getComputerChoice(){ // How do I get the computer to chose and then output that data?
+let cChoice = function getComputerChoice(){ // 
     const aiChoice = ['rock', 'paper', 'scissors']
     const randomNumber = Math.floor(Math.random() * 3)
-    return aiChoice[randomNumber]
+    return "Computer chose: " + aiChoice[randomNumber]
 }
 
 
-
-function getResult(){ // getResult(playerChoice, computerChoice)
+function getResult(){ // => getResult(playerChoice, computerChoice)
     // get input from user; rock paper or scissors
     // take input and compare to computer choice
     pChoice()
-    cChoice()
-    if(pChoice === cChoice){
-    score = 0
-    }else if(pChoice === "rock" && cChoice === "scissors"){
-        console.log(`You chose rock! Computer chose:${pChoice}`)
+    console.log(cChoice())
+
+    if(pChoice === "rock" && cChoice === "scissors"){
+        console.log(`You chose: ${pChoice[0]}`) // => console.log(`You chose rock!`)
+        console.log("You win!")
         score++
+        console.log("Player score: " + score)
     }else if(pChoice === "paper" && cChoice === "rock"){
-        console.log("You win! ")
+        console.log(`You chose: ${cChoice[1]}`) // => console.log("You win! ")
+        console.log("You win!")
         score++
     }else if(pChoice === "scissors" && cChoice === "paper"){
+        console.log(`You chose: ${cChoice[2]}`) // => console.log("You win! ")
         console.log("You win! ")
         score++
+    }else if(pChoice === cChoice){
+        score = 0
     }else{
         console.log("You lost! ")
         score--
+        console.log("Player score: " + score)
+
     }
     return score
 }
 getResult()
+
 
 /* function calculateFinalScore(){ // Update score depending on who won
     return
