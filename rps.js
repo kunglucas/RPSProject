@@ -20,13 +20,16 @@ function playerChoice(){ // How do I randomize the choice without using prompt("
 }
 
 function engineChoice(){ // How do I get the computer to chose and then output that data?
-    const aiChoice = Math.floor(Math.random() * 3)
-    return aiChoice
+    const aiChoice = ['rock', 'paper', 'scissors']
+    const randomNumber = Math.floor(Math.random() * 3)
+    return aiChoice[randomNumber]
 }
 
 function getWinner(){
     if(playerChoice() === "rock" && engineChoice() === "scissors"){
-        console.log("You win! ")
+        console.log("You chose rock")
+        console.log(`The computer chose ${aiChoice}`)
+        console.log("+1")
         score++
     }else if(playerChoice() === "paper" && engineChoice() === "rock"){
         console.log("You win! ")
