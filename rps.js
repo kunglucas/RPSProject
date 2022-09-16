@@ -10,11 +10,11 @@ If statements to calculate the different outcomes depending on choice
 const prompt = require('prompt-sync')();
 let score = 0
 function playerChoice(){ // How do I randomize the choice without using prompt("What's your choice? ") => fixed
-    const rpsOption = prompt("Pick one: " + ["rock ", " paper ", " scissors "])
+    const rpsPlayerChoice = prompt("Pick one: " + ["rock ", " paper ", " scissors "])
     // add something thats stops prompt from continuing in console
-    if(rpsOption === "rock"){
+    if(rpsPlayerChoice === "rock"){
         console.log("You chose: " + " rock")
-    }else if(rpsOption === "paper"){
+    }else if(rpsPlayerChoice === "paper"){
         console.log("You chose: " + " paper")
     }else{
         console.log("You chose: " + " scissors")
