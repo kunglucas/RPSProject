@@ -9,9 +9,10 @@ If statements to calculate the different outcomes depending on choice
 */
 const prompt = require('prompt-sync')();
 let score = 0
-function playerChoice(){ // How do I randomize the choice without using prompt("What's your choice? ")
+function playerChoice(){ // How do I randomize the choice without using prompt("What's your choice? ") => fixed
     const rpsOption = ['rock', 'paper', 'scissors']
     const rpsChoice = prompt("Pick one \n1: rock \n2: paper \n3: scissors \n")
+    // add something thats stops prompt from continuing in console
     if(rpsChoice === "rock"){
         console.log("You chose: " + rpsOption[0])
     }else if(rpsChoice === "paper"){
@@ -39,17 +40,16 @@ function getResult(playerChoice, computerChoice){
     score = 0
     }else if(playerChoice === "rock" && computerChoice === "scissors"){
         console.log("You chose rock")
-        console.log("+1")
-        score = 1
+        score++
     }else if(playerChoice === "paper" && computerChoice === "rock"){
         console.log("You win! ")
-        score = 1
+        score++
     }else if(playerChoice === "scissors" && computerChoice === "paper"){
         console.log("You win! ")
-        score = 1
+        score++
     }else{
         console.log("You lost! ")
-        score = -1
+        score--
     }
     return score
 }
