@@ -24,7 +24,7 @@ function engineChoice(){ // How do I get the computer to chose and then output t
     return aiChoice
 }
 
-function showOutCome(){
+function getWinner(){
     if(playerChoice() === "rock" && engineChoice() === "scissors"){
         console.log("You win! ")
         score++
@@ -50,5 +50,6 @@ function calculateFinalScore(){ // Update score depending on who won
 function playGame(){
     playerChoice()
     engineChoice()
+    getWinner()
 }
 playGame()
