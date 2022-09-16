@@ -26,7 +26,10 @@ function engineChoice(){ // How do I get the computer to chose and then output t
 }
 
 function getWinner(){
-    if(playerChoice() === "rock" && engineChoice() === "scissors"){
+    if(playerChoice() === engineChoice()){
+    console.log("It's a tie! ")
+    score = 0
+    }else if(playerChoice() === "rock" && engineChoice() === "scissors"){
         console.log("You chose rock")
         console.log(`The computer chose ${aiChoice}`)
         console.log("+1")
@@ -37,9 +40,6 @@ function getWinner(){
     }else if(playerChoice() === "scissors" && engineChoice() === "paper"){
         console.log("You win! ")
         score++
-    }else if(playerChoice() === engineChoice()){
-        console.log("It's a tie! ")
-        score = 0
     }else{
         console.log("You lost! ")
         score = -1
