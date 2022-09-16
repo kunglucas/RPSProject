@@ -1,23 +1,29 @@
 /*What we need to make a rps app
-
 We need functions: 
     We need a playGame() function where we put all our functions in to play the game
-    We need a rpsWinner() function, for whenever human player wins
-    We need a rpsLoser() function, for whenever human player loses
-    We need a rpsTie() function, for whenever human choice and ai choice is the same
-
     We need an array with item choices a.k.a ['rock', 'paper', 'scissors']
     We need a player function called playerChoice()
     We need an ai function called engineChoice(), inside the engine choice we need a method called Math.floor(Math.random() * 3) 
 
 If statements to calculate the different outcomes depending on choice
 */
+const prompt = require('prompt-sync')();
 let score = 0
 function playerChoice(){ // How do I randomize the choice without using prompt("What's your choice? ")
-    const choice = ["rock", "paper", "scissors"]
-    return choice
+    const rpsOption = ['rock', 'paper', 'scissors']
+    const rpsChoice = prompt("Pick one \n1: rock \n2: paper \n3: scissors \n")
+    if(rpsChoice === "rock"){
+        console.log("You chose: " + rpsOption[0])
+    }else if(rpsChoice === "paper"){
+        console.log("You chose: " + rpsOption[1])
+    }else{
+        console.log("You chose: " + rpsOption[2])
+    }
+    return
     // add eventlistener choice.addEventListener("onclick") when working with DOM
 }
+playerChoice()
+
 
 function getComputerChoice(){ // How do I get the computer to chose and then output that data?
     const aiChoice = ['rock', 'paper', 'scissors']
@@ -27,6 +33,8 @@ function getComputerChoice(){ // How do I get the computer to chose and then out
 getComputerChoice()
 
 function getResult(playerChoice, computerChoice){
+    // get input from user; rock paper or scissors
+    // take input and compare to computer choice
     if(playerChoice === computerChoice){
     score = 0
     }else if(playerChoice === "rock" && computerChoice === "scissors"){
@@ -52,8 +60,8 @@ function calculateFinalScore(){ // Update score depending on who won
 }
 
 function playGame(){
-    playerChoice()
-    getComputerChoice()
-    getResult()
+    // playerChoice()
+    // getComputerChoice()
+    // getResult()
 }
 playGame()
