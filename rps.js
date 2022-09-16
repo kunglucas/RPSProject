@@ -11,16 +11,16 @@ const prompt = require('prompt-sync')();
 let score = 0
 function playerChoice(){ // How do I randomize the choice without using prompt("What's your choice? ") => fixed
     const rpsOption = ['rock', 'paper', 'scissors']
-    const rpsChoice = prompt("Pick one \n1: rock \n2: paper \n3: scissors \n")
+    const rpsChoice = prompt("Pick one \n rock \n paper \n scissors \n")
     // add something thats stops prompt from continuing in console
     if(rpsChoice === "rock"){
-        console.log("You chose: " + rpsOption[0])
+        console.log("You chose: " + " ")
     }else if(rpsChoice === "paper"){
-        console.log("You chose: " + rpsOption[1])
+        console.log("You chose: " + " ")
     }else{
-        console.log("You chose: " + rpsOption[2])
+        console.log("You chose: " + " ")
     }
-    return
+    
     // add eventlistener choice.addEventListener("onclick") when working with DOM
 }
 playerChoice()
@@ -55,13 +55,14 @@ function getResult(playerChoice, computerChoice){
 }
 getResult()
 
-function calculateFinalScore(){ // Update score depending on who won
+/* function calculateFinalScore(){ // Update score depending on who won
     return
-}
+}*/
 
-function playGame(){
+/* function playGame(){
     // playerChoice()
     // getComputerChoice()
     // getResult()
 }
-playGame()
+playGame()*/
+let name = prompt("what's your name? ") // just testing prompt
