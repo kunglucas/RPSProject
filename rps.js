@@ -13,46 +13,47 @@ We need functions:
 If statements to calculate the different outcomes depending on choice
 */
 let score = 0
-function playerChoice(){ // How do I randomize the choice without using prompt("What's your choice? ")
+/*function playerChoice(){ // How do I randomize the choice without using prompt("What's your choice? ")
     const choice = ["rock", "paper", "scissors"]
     return choice
     // add eventlistener choice.addEventListener("onclick")
-}
+}*/
 
-function engineChoice(){ // How do I get the computer to chose and then output that data?
+function getComputerChoice(){ // How do I get the computer to chose and then output that data?
     const aiChoice = ['rock', 'paper', 'scissors']
     const randomNumber = Math.floor(Math.random() * 3)
     return aiChoice[randomNumber]
 }
+getComputerChoice()
 
-function getWinner(){
-    if(playerChoice() === engineChoice()){
-    console.log("It's a tie! ")
+function getResult(playerChoice, computerChoice){
+    if(playerChoice === computerChoice){
     score = 0
-    }else if(playerChoice() === "rock" && engineChoice() === "scissors"){
+    }else if(playerChoice === "rock" && computerChoice === "scissors"){
         console.log("You chose rock")
-        console.log(`The computer chose ${aiChoice}`)
         console.log("+1")
-        score++
-    }else if(playerChoice() === "paper" && engineChoice() === "rock"){
+        score = 1
+    }else if(playerChoice === "paper" && computerChoice === "rock"){
         console.log("You win! ")
-        score++
-    }else if(playerChoice() === "scissors" && engineChoice() === "paper"){
+        score = 1
+    }else if(playerChoice === "scissors" && computerChoice === "paper"){
         console.log("You win! ")
-        score++
+        score = 1
     }else{
         console.log("You lost! ")
         score = -1
     }
+    return score
 }
+getResult()
 
 function calculateFinalScore(){ // Update score depending on who won
     return
 }
 
 function playGame(){
-    playerChoice()
-    engineChoice()
-    getWinner()
+    // playerChoice()
+    getComputerChoice()
+    // getResult()
 }
 playGame()
