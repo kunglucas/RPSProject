@@ -13,11 +13,11 @@ We need functions:
 If statements to calculate the different outcomes depending on choice
 */
 let score = 0
-/*function playerChoice(){ // How do I randomize the choice without using prompt("What's your choice? ")
+function playerChoice(){ // How do I randomize the choice without using prompt("What's your choice? ")
     const choice = ["rock", "paper", "scissors"]
     return choice
-    // add eventlistener choice.addEventListener("onclick")
-}*/
+    // add eventlistener choice.addEventListener("onclick") when working with DOM
+}
 
 function getComputerChoice(){ // How do I get the computer to chose and then output that data?
     const aiChoice = ['rock', 'paper', 'scissors']
@@ -52,8 +52,8 @@ function calculateFinalScore(){ // Update score depending on who won
 }
 
 function playGame(){
-    // playerChoice()
+    playerChoice()
     getComputerChoice()
-    // getResult()
+    getResult()
 }
 playGame()
