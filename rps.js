@@ -8,71 +8,79 @@ We need functions:
 If statements to calculate the different outcomes depending on choice
 */
 const prompt = require('prompt-sync')();
-let score = 0
+let score;
 
-
-
-let pChoice = function getPlayerChoice(){ // How do I randomize the choice without using prompt("What's your choice? ") => fixed
-    const rpsChoice = ['rock ' , ' paper', ' scissors ']
-    const rpsPlayerChoice = prompt(`Pick one: ${rpsChoice[0]}${rpsChoice[1]}${rpsChoice[2]} : `) //  ==> ["rock ", " paper ", " scissors "]
-    if(rpsPlayerChoice === "rock"){
-        console.log(`You chose: ${rpsChoice[0]}`) // => " rock"
-    }else if(rpsPlayerChoice === "paper"){
-        console.log(`You chose: ${rpsChoice[1]}`)
-    }else{
-        console.log(`You chose: ${rpsChoice[2]}`)
+const userRegistration = (userName, userPass, userPassCheck) => {
+    userName = prompt("Hello and welcome to rock paper scissors, please enter your username: ")
+    userPass = prompt("Please enter password: ")
+    userPassCheck = prompt("Please confirm your password: ")
+    const userPassConfirmed = console.log("Password confirmed! ")
+    const userPassNotConfirmed = console.log("Please enter your password again: ")
+    if(userPassCheck === userPass){
+        return userPassConfirmed
+    }else if(userPassCheck !== userPass){
+        return userPassNotConfirmed
     }
-    return rpsPlayerChoice
+};
+
+
+
+
+
+
+const getUserChoice = (userInput) => { // How do I randomize the choice without using prompt("What's your choice? ") => fixed
+    userInput = prompt(`Pick one: Rock Paper or Scissors `) //  
+    if(userInput === "rock" || userInput === "paper" || userInput === "scissors"){
+    return userInput
+    }
+    if(userInput !== "rock" || userInput !== "paper" || userInput !== "scissors"){
+        throw "You can't pick that! "
+    }
 // add eventlistener choice.addEventListener("onclick") when working with DOM
-}
+};
 
 
-let cChoice = function getComputerChoice(){ // 
-    const aiChoice = ['rock', 'paper', 'scissors']
+const getComputerChoice = () => {
     const randomNumber = Math.floor(Math.random() * 3)
-    return "Computer chose: " + aiChoice[randomNumber]
-}
-
-
-function getResult(){ // => getResult(playerChoice, computerChoice)
-    // get input from user; rock paper or scissors
-    // take input and compare to computer choice
-    pChoice()
-    console.log(cChoice())
-
-    if(pChoice === "rock" && cChoice === "scissors"){
-        console.log(`You chose: ${pChoice[0]}`) // => console.log(`You chose rock!`)
-        console.log("You win!")
-        score++
-        console.log("Player score: " + score)
-    }else if(pChoice === "paper" && cChoice === "rock"){
-        console.log(`You chose: ${cChoice[1]}`) // => console.log("You win! ")
-        console.log("You win!")
-        score++
-    }else if(pChoice === "scissors" && cChoice === "paper"){
-        console.log(`You chose: ${cChoice[2]}`) // => console.log("You win! ")
-        console.log("You win! ")
-        score++
-    }else if(pChoice === cChoice){
-        score = 0
-    }else{
-        console.log("You lost! ")
-        score--
-        console.log("Player score: " + score)
-
+    switch(randomNumber){
+        case 0:
+            return "rock";
+        case 1:
+            return "paper";
+        case 2: 
+            return "scissors";
     }
-    return score
-}
-getResult()
+};
 
 
-/* function calculateFinalScore(){ // Update score depending on who won
+const getResult = (userChoice, computerChoice) => { // => getResult(playerChoice, computerChoice)
+    // conditionals, if statements
+    if(userChoice === computerChoice){
+        return "This game is a tie!";
+    }else if(userChoice === "rock" && computerChoice === "paper"){
+        return "Congratulations, you won!"
+    }else if(userChoice === "paper" && computerChoice === "rock"){
+        return "Congratulations, you won!"
+    }else if(userChoice === "scissors" && computerChoice === "paper"){
+        return "Congratulations, you won!"
+    }else{
+        return "Sorry, computer won!"
+    }
+
+};
+
+function calculateFinalScore(){ // Update score depending on who won
     return
-}*/
+};
 
-/* function playGame(){
-    // playerChoice()
-    // getComputerChoice()
-    // getResult()
-}
-playGame()*/
+const playGame = () => {
+   const userChoice = getUserChoice()
+   const computerChoice = getComputerChoice()
+   console.log(`You threw: ${userChoice}`)
+   console.log(`The computer threw: ${computerChoice}`)
+
+   console.log(getResult(userChoice, computerChoice))
+};
+playGame()
+
+
